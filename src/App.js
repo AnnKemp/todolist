@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { ItemList, NewItem } from "./components/Items";
 import './App.css';
 
+const initialItems=["Setup basic components", "Add some styling"];
+
 function App() {
+    // useState hook returns two values. First is the state itself
+    // and second is a function that we can use to update the state
+    const [items, setItems]=useState(initialItems);
+
+    function handleAddItem(item){
+        setItems([...items, item]); // die puntjes dat was zo'n verkorte notatie zo van dat kan vanalles zijn nog even checken
+    }
+    function handleRemoveItem(index){
+        const copy=[...items];
+        copy.splice(index, 1); // op de index gooi er eentje weg
+        setItems(copy);
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <header className="App-header">
+            <h2>ToDo App</h2>
+            <NewItem add={handleAddItem} />
+            <ItemList items={items} remove={handleRemoveItem()} />
+        </header>
     </div>
   );
 }
