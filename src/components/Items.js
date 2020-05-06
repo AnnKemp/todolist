@@ -21,4 +21,4 @@ export function Item({ text, index, remove }){
         </div>
     )
 }
-// deze pagina nog even checken
+// deze pagina nog even checken // not a number 0 of zo is niet duidelijk
