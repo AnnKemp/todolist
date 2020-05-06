@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function NewItem({ add }){ // deze schrijfwijze ben ik niet gewoon
+export function NewItem({ add }){
     const [text, setText] = useState("");
 
     return(
@@ -10,7 +10,6 @@ export function NewItem({ add }){ // deze schrijfwijze ben ik niet gewoon
         </div>
     );
 }
-// moet dat hieronder er nog bij ? morgen even checken
 export function ItemList({ items = [], remove }){
     return items.map((item, i) => <Item text={i} key={i} remove={remove} />);
 }

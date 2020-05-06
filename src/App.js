@@ -10,7 +10,7 @@ function App() {
     const [items, setItems]=useState(initialItems);
 
     function handleAddItem(item){
-        setItems([...items, item]); // die puntjes dat was zo'n verkorte notatie zo van dat kan vanalles zijn nog even checken
+        setItems([...items, item]); // die puntjes dat was zo'n verkorte notatie zo van "dat kan vanalles zijn" nog even checken om zeker te zijn
     }
     function handleRemoveItem(index){
         const copy=[...items];
@@ -22,7 +22,7 @@ function App() {
         <header className="App-header">
             <h2>ToDo App</h2>
             <NewItem add={handleAddItem} />
-            <ItemList items={items} remove={handleRemoveItem()} />
+            <ItemList items={items} remove={handleRemoveItem} />
         </header>
     </div>
   );
