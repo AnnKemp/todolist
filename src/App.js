@@ -27,5 +27,5 @@ function App() {
     </div>
   );
 }
-
+// deze pagina is 'OK'
 export default App;

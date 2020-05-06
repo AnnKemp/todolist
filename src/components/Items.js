@@ -1,15 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-export function NewItem({ add }){
-    const [text, setText]=useState("");
+export function NewItem({ add }){ // deze schrijfwijze ben ik niet gewoon
+    const [text, setText] = useState("");
 
     return(
         <div className="Item">
-            <input type="text" placeholder="New Task" value={text} onChange={e=>setText(e.target.value)}></input>
-            <button onClick={()=> add(text)}>Add</button>
+            <input type="text" placeholder="New Task" value={text} onChange={e => setText(e.target.value)}></input>
+            <button onClick={() => add(text)}>Add</button>
         </div>
     );
 }
+// moet dat hieronder er nog bij ? morgen even checken
 export function ItemList({ items = [], remove }){
     return items.map((item, i) => <Item text={i} key={i} remove={remove} />);
 }
@@ -21,3 +22,4 @@ export function Item({ text, index, remove }){
         </div>
     )
 }
+// deze pagina nog even checken
