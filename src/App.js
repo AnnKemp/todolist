@@ -9,7 +9,7 @@ function App() {
     // and second is a function that we can use to update the state
     const [items, setItems]=useState(initialItems);
 
-    function handleAddItem(item){
+    function handleAddItem(item){ // ja die item moet dus tekst zijn en dat is het nog niet nan voorlopig!!!
         setItems([...items, item]); // die puntjes dat was zo'n verkorte notatie zo van "dat kan vanalles zijn" nog even checken om zeker te zijn
     }
     function handleRemoveItem(index){
@@ -27,5 +27,5 @@ function App() {
     </div>
   );
 }
-// deze pagina is 'OK'
+
 export default App;
