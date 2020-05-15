@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+If you want to preview this site: https://annkemp.github.io/todolist/
+
 ## Available Scripts
 
 In the project directory, you can run:
