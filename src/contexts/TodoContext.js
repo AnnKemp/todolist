@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 // this is the context hook page
 export const TodoContext= createContext(); // dit wordt globaal aangemaakt en een constante is zowiezo globaal
