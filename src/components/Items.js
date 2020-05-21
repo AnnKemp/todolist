@@ -1,10 +1,10 @@
 import React, {useContext, useState} from "react";
-import TodoContext from "../contexts/TodoContext"; // hier nog ergens op de pagina een probleempje oplossen maar op het moment heb ik het even té warm 15.11 en ik denk dat het veertig graden is . . . pfff
+import useTodoContext from "../contexts/TodoContext";
 
 export function NewItem(){
     const [text, setText] = useState("");
     // TodoContext is made available as a hook
-    const todoContext =TodoContext;
+    const todoContext =useTodoContext();
 
     return(
         <div className="Item">
@@ -15,7 +15,7 @@ export function NewItem(){
 }
 export function ItemList(){
     // TodoContext is made available as a hook
-    const todoContext =TodoContext;
+    const todoContext =useTodoContext();
 
     return todoContext.items.map((item, i) => <Item text={item} index={i} key={i} remove={todoContext.remove} />);
 }
