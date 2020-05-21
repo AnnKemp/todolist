@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ItemList, NewItem } from "./components/Items";
+import TodoContext from "./contexts/TodoContext"; // deze ook importeren
 import './App.css';
 
 const initialItems=["Setup basic components", "Add some styling"];
@@ -18,6 +19,8 @@ function App() {
         setItems(copy);
     }
   return (
+      // hier de context hook van waarden voorzien
+      <TodoContext.Provider value={{ items, add: handleAddItem, remove: handleRemoveItem }}>
     <div className="App">
         <header className="App-header">
             <h2>ToDo App</h2>
@@ -25,6 +28,7 @@ function App() {
             <ItemList items={items} remove={handleRemoveItem} />
         </header>
     </div>
+      </TodoContext.Provider>
   );
 }
 
