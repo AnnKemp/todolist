@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ItemList, NewItem } from "./components/Items";
 import { TodoProvider } from "./contexts/TodoContext"; // import the context here to load with the values
 import './App.css';

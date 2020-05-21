@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext } from 'react';
 
 // this is the context hook page
-export const TodoContext= createContext(); // dit wordt globaal aangemaakt en een constante is zowiezo globaal
+export const TodoContext= createContext();
 
 const initialItems=["Wash dishes", "Do the dusting"];
 
@@ -20,7 +20,7 @@ function TodoProvider(props) {
     }
     const todoData={items, add, remove};
 
-    return <TodoContext.Provider value={todoData} {...props} />; // hier geeft ie nog een foutje op  een scope fout maar volgens mij zit de scope toch 'ok'
+    return <TodoContext.Provider value={todoData} {...props} />;
 }
 //Here we create a custom hook that allows us to consume the todo context
 function useTodoContext(){
