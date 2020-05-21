@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 And was made following a tutorial about the use of the context hook to learn to know how the context hook works, the link:
 medium.com/better-programming/build-a-redux-like-store-with-react-context-hooks-234e3774495f
 
-If you want to preview this site: https://annkemp.github.io/todolist/
+This site will on display at the following link in the near future: https://annkemp.github.io/todolist/
 
 ## Available Scripts
 
