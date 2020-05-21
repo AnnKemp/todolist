@@ -1,30 +1,23 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import TodoContext from "../contexts/TodoContext"; // deze hier ook importeren
 
 export function NewItem(){
     const [text, setText] = useState("");
+    // TodoContext is made available as a hook
+    const todoContext = useContext(TodoContext);
 
     return(
-        // hier de waarden uit de context hook halen
-        <TodoContext.Consumer>
-            {values => (
+        // hier de waarden uit de context hook halen via die values
         <div className="Item">
             <input type="text" placeholder="New Task" value={text} onChange={e => setText(e.target.value)}></input>
-            <button onClick={() => values.add(text)}>Add</button>
+            <button onClick={() => todoContext.add(text)}>Add</button>
         </div>
-            )}
-        </TodoContext.Consumer>
     );
 }
 export function ItemList(){
-    return (
-        // hier de waarden uit de context hook halen
-        <TodoContext.Consumer>
-            {values =>
-        values.items.map((item, i) => <Item text={item} key={i} remove={values.remove} />)
-            }
-        </TodoContext.Consumer>
-        );
+    const todoContext = useContext(TodoContext);
+
+    return todoContext.items.map((item, i) => <Item text={item} index={i} key={i} remove={todoContext.remove} />);
 }
 export function Item({ text, index, remove }){
     return(
